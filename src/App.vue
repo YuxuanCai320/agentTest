@@ -1,9 +1,9 @@
 <script setup>
-import CaseStudySection from './components/CaseStudySection.vue';
+import PortfolioCover from './components/PortfolioCover.vue';
 </script>
 
 <template>
   <main class="portfolio-page">
-    <CaseStudySection />
+    <PortfolioCover />
   </main>
 </template>
