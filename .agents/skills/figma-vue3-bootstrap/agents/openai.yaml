@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figma Vue3 Bootstrap"
+  short_description: "Figma-to-Vue3 delivery with lint-build-PR flow"
+  default_prompt: "Use $figma-vue3-bootstrap to deliver a Figma URL into Vue 3 code, run lint/build, and open a PR with @codex review."
