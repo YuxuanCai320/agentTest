@@ -1,0 +1,83 @@
+:root {
+  --page-bg: #ead4d5;
+  --text-main: #2d2d2d;
+  --text-body: #1f1f1f;
+  --content-width: min(100%, 824px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--page-bg);
+  color: var(--text-body);
+}
+
+.portfolio-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 56px 24px;
+}
+
+.case-study-card {
+  width: var(--content-width);
+}
+
+.case-study-title {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1.1;
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.case-study-image {
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+.case-study-copy {
+  margin-top: 30px;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.case-study-copy p {
+  margin: 0 0 20px;
+}
+
+.case-study-copy ul {
+  margin: 0 0 24px;
+  padding-left: 22px;
+}
+
+.case-study-copy li {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-page {
+    padding: 32px 16px;
+  }
+
+  .case-study-title {
+    font-size: clamp(1.6rem, 9vw, 2.4rem);
+  }
+
+  .case-study-image {
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .case-study-copy {
+    margin-top: 22px;
+    font-size: 0.95rem;
+  }
+}
