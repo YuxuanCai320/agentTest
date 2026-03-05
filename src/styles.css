@@ -1,8 +1,8 @@
 :root {
-  --page-bg: #ead4d5;
-  --text-main: #2d2d2d;
-  --text-body: #1f1f1f;
-  --content-width: min(100%, 824px);
+  --page-bg: #ececed;
+  --text-main: #101828;
+  --text-accent: #1757ff;
+  --user-chip: #7f56d9;
 }
 
 * {
@@ -11,73 +11,205 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   background: var(--page-bg);
-  color: var(--text-body);
+  color: var(--text-main);
 }
 
 .portfolio-page {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 56px 24px;
 }
 
-.case-study-card {
-  width: var(--content-width);
-}
-
-.case-study-title {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3.25rem);
-  line-height: 1.1;
-  color: var(--text-main);
-  font-weight: 800;
-}
-
-.case-study-image {
-  margin-top: 30px;
+.cover-layout {
   width: 100%;
-  border-radius: 12px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 52px 56px;
+  display: grid;
+  grid-template-columns: 625px 1fr;
+  column-gap: 136px;
+  align-items: start;
+}
+
+.cover-hero {
+  position: sticky;
+  top: 24px;
+  min-height: calc(100vh - 104px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 150px;
+}
+
+.cover-user-block {
+  position: relative;
+  width: 260px;
+  height: 180px;
+}
+
+.cover-avatar {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.cover-user-label {
+  position: absolute;
+  top: 86px;
+  left: 182px;
+  background: var(--user-chip);
+  color: #fff;
+  font-size: 38px;
+  line-height: 1;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);
+  padding: 8px 14px;
+}
+
+.cover-arrow {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: -62px;
+  right: -36px;
+  transform: rotate(180deg);
+}
+
+.cover-headline h1 {
+  margin: 0;
+  font-size: clamp(3.2rem, 5.2vw, 6.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.headline-line,
+.subtitle-line {
+  display: block;
+}
+
+.cover-subtitle {
+  margin: 32px 0 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--text-accent);
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.cover-subtitle-arrow {
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.cover-cards {
+  display: grid;
+  grid-template-columns: 484px 499px;
+  column-gap: 42px;
+  align-items: start;
+}
+
+.cover-column {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.cover-card {
+  overflow: hidden;
+  width: 100%;
+}
+
+.cover-card-image {
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
 }
 
-.case-study-copy {
-  margin-top: 30px;
-  font-size: 1rem;
-  line-height: 1.45;
+@media (max-width: 1680px) {
+  .cover-layout {
+    grid-template-columns: minmax(460px, 625px) 1fr;
+    column-gap: 72px;
+    padding: 40px;
+  }
+
+  .cover-cards {
+    grid-template-columns: minmax(320px, 484px) minmax(320px, 499px);
+    column-gap: 24px;
+  }
+
+  .cover-card {
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 
-.case-study-copy p {
-  margin: 0 0 20px;
-}
+@media (max-width: 1200px) {
+  .cover-layout {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
 
-.case-study-copy ul {
-  margin: 0 0 24px;
-  padding-left: 22px;
-}
+  .cover-hero {
+    position: static;
+    min-height: auto;
+    gap: 40px;
+  }
 
-.case-study-copy li {
-  margin: 6px 0;
+  .cover-user-label {
+    left: 120px;
+    font-size: 28px;
+  }
+
+  .cover-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cover-column {
+    gap: 24px;
+  }
 }
 
 @media (max-width: 768px) {
-  .portfolio-page {
-    padding: 32px 16px;
+  .cover-layout {
+    padding: 24px 16px 32px;
   }
 
-  .case-study-title {
-    font-size: clamp(1.6rem, 9vw, 2.4rem);
+  .cover-user-block {
+    width: 220px;
+    height: 140px;
   }
 
-  .case-study-image {
-    margin-top: 20px;
-    border-radius: 10px;
+  .cover-avatar {
+    width: 64px;
+    height: 64px;
   }
 
-  .case-study-copy {
-    margin-top: 22px;
-    font-size: 0.95rem;
+  .cover-user-label {
+    top: 72px;
+    left: 94px;
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+
+  .cover-arrow {
+    width: 32px;
+    height: 32px;
+    top: -42px;
+    right: -22px;
+  }
+
+  .cover-headline h1 {
+    font-size: clamp(2.2rem, 14vw, 3.3rem);
+  }
+
+  .cover-subtitle {
+    margin-top: 18px;
+    gap: 8px;
+    font-size: clamp(1.6rem, 8.5vw, 2.2rem);
   }
 }
